@@ -1,44 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>All Questions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            padding: 2rem;
-        }
+{% load static %}
 
-        .question {
-            background: #fff;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all_answer.css' %}">
 
-        .question h3 {
-            margin-top: 0;
-        }
-
-        .meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .actions a {
-            text-decoration: none;
-            color: #007bff;
-            margin-right: 1rem;
-        }
-
-        .actions a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
     {% include './home.html'%}
     <h4>All Questions</h4>
 
@@ -85,11 +48,7 @@
             </p>
         {% endif %}
         <br>
-
-       
     </div>
 {% empty %}
     <p>No questions posted yet.</p>
 {% endfor %}
-</body>
-</html>

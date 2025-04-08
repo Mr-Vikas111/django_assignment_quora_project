@@ -1,61 +1,10 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Post Answer</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/post_answer.css' %}">
-    {% comment %} <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            padding-top: 5rem;
-        }
-
-        .form-container {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 500px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            margin-bottom: 1rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style> {% endcomment %}
-</head>
-<body>
-    <div class="form-container">
-        <h2>{{ question.question }}</h2>
-        <form method="post">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/post_answer.css' %}">
+<div class="form-container">
+    <h2>{{ question.question }}</h2>
+    <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
-</html>
+        <button type="submit">Submit</button>
+    </form>
+</div>
