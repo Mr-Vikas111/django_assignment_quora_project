@@ -19,3 +19,4 @@ logs/
 .pytest_cache
 .env.dev_vinay
 .DS_Store
+env/
