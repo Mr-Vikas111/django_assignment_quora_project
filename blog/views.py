@@ -32,7 +32,7 @@ def create_question(request):
 def all_questions_list(request):
     questions = QuestionData.objects.prefetch_related(
         'question_answer', 'question_like'
-    ).all().order_by('-created')
+    ).exclude(user=request.user).order_by('-created')
     
      # Attach a flag to each question
     for q in questions:
