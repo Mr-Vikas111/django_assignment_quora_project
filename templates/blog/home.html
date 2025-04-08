@@ -1,0 +1,23 @@
+{% include './header.html' %}
+
+<style>
+    .h-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff; /* Blue */
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      border: none;
+    }
+</style>
+
+{% if user.is_authenticated %}
+  <h4>Welcome, {{ user.name|default:"Guest" }}!</h4>
+{% endif %}
+
+<a href="{% url '_create_question' %}" class="h-btn">Create Question</a>
+<a href="{% url '_list_question' %}" class="h-btn">List All Questions</a>
+<a href="{% url '_user_list_question' %}" class="h-btn">My Questions</a>
+<a href="{% url '_logout' %}" class="h-btn">Logout</a>

@@ -1,0 +1,69 @@
+{% comment %} {% include './header.html' %}
+
+<a href="{% url '_register' %}" class="btn btn-primary">Register</a>
+<a href="{% url '_login' %}" class="btn btn-primary">Login</a> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        a.button {
+            display: block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .register-btn {
+            background-color: #28a745;
+        }
+
+        .register-btn:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quora</h1>
+        <a href="{% url '_login' %}" class="button">Login</a>
+        <a href="{% url '_register' %}" class="button register-btn">Register</a>
+    </div>
+</body>
+</html>

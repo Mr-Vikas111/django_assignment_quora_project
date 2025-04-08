@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 2rem;
+        }
+
+        .question {
+            background: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .question h3 {
+            margin-top: 0;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 1rem;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    {% include './home.html'%}
+    <h4>All Questions</h4>
+
+    {% for question in questions %}
+    <div class="question">
+        <h3>{{ question.question }}</h3>
+        <div class="meta">
+            Posted by {{ question.user.name }} on {{ question.created|date:"M d, Y H:i" }}
+        </div>
+
+        {% comment %} <-- questions like and answer sections --> {% endcomment %}
+        <p>
+            <strong>{{ question.question_answer.count }} Answer{{ question.question_answer.count|pluralize }}</strong><br>
+            <strong>{{ question.question_like.count }} Like{{ question.question_like.count|pluralize }}</strong>
+        </p>
+        <br>
+        
+        {% comment %} <-- action button --> {% endcomment %}
+        
+        {% if user.is_authenticated %}
+            {% if  user_wise %}
+            {% else %}
+                <a href="{% url '_post_answer' question.id %}" class="btn btn-primary">  <button type="button">Post Answer</button></a> 
+
+                {% if question.liked_by_user %}
+                    <a href="{% url '_like_answer' question.id %}" class="btn btn-primary"><button type="button">Unlike</button></a>
+                {% else %}
+                    <a href="{% url '_like_answer' question.id %}" class="btn btn-primary"><button type="button">Like</button></a>
+                {% endif %}
+            {% endif %}
+            
+        {% endif %}
+
+        {% comment %} <-- question actions sections --> {% endcomment %}
+        {% if question.question_answer.exists %}
+            <p><strong>Answers :</strong> <br>
+                {% for answer in question.question_answer.all %}
+                   {{ answer.answer }} <br>
+                   <div class="meta">
+                    Answered by: <i>{{ answer.commented_by.name }} </i> on {{ question.created|date:"M d, Y H:i" }}
+                   </div>
+
+                {% endfor %}
+            </p>
+        {% endif %}
+        <br>
+
+       
+    </div>
+{% empty %}
+    <p>No questions posted yet.</p>
+{% endfor %}
+</body>
+</html>
