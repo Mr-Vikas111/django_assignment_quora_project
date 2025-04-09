@@ -54,4 +54,4 @@ A simple Question & Answer web app built using **Django**, featuring user regist
 
 7. **Access in browser**
    ```cpp
-   [python manage.py runserver](http://127.0.0.1:8000/)
+   http://127.0.0.1:8000
