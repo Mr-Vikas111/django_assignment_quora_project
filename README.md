@@ -54,18 +54,20 @@ A simple Question & Answer web app built using **Django**, featuring user regist
    ```cpp
    http://127.0.0.1:8000
 
+## 📸 Screenshots
 
-## 🧑‍💻 Models Used
+### 🔐 Login Page
+![Login Page](images/login.png)
 
-- QuestionData
- - user: ForeignKey to User
- - question: TextField
+### 🔐 Register Page
+![Login Page](images/register.png)
 
-- QuestionAnswerData
- - question: FK to QuestionData
- - answer: Text
- - commented_by: FK to User (nullable)
+### 🔐 Question Listing Page
+![Login Page](images/list_questions.png)
 
-- QuestionLikesData
- - question: FK to QuestionData
- - liked_by: FK to User (nullable)
+### 📝 Create Question
+![Create Question](images/post_question.png)
+
+### 💬 Post Answer
+![Post Answer](images/answer.png)
+
