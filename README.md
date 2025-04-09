@@ -31,8 +31,27 @@ A simple Question & Answer web app built using **Django**, featuring user regist
    git clone git@github.com:Mr-Vikas111/django_assignment_quora_project.git
    cd quora_posts
 
- ```bash
-python -m venv env
-source env/bin/activate  # on Windows: env\Scripts\activate
+2. **Create a virtual environment**
+   ```bash
+   python -m venv env
+   source env/bin/activate  # on Windows: env\Scripts\activate
 
-   
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+
+4. **Run migrations**
+   ```bash
+   python manage.py migrate
+
+5. **Start the development server**
+   ```bash
+   python manage.py runserver
+
+6. **Access in browser**
+   ```bash
+   python manage.py runserver
+
+7. **Access in browser**
+   ```cpp
+   [python manage.py runserver](http://127.0.0.1:8000/)
