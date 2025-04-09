@@ -1,5 +1,3 @@
-# django_assignment_quora_project
-
 # Django Q&A Platform
 
 A simple Question & Answer web app built using **Django**, featuring user registration, login, logout, question posting, commenting, and likes.
