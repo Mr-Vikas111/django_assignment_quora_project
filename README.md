@@ -53,3 +53,19 @@ A simple Question & Answer web app built using **Django**, featuring user regist
 7. **Access in browser**
    ```cpp
    http://127.0.0.1:8000
+
+
+## 🧑‍💻 Models Used
+
+- QuestionData
+user: ForeignKey to User
+question: TextField
+
+- QuestionAnswerData
+question: FK to QuestionData
+answer: Text
+commented_by: FK to User (nullable)
+
+- QuestionLikesData
+question: FK to QuestionData
+liked_by: FK to User (nullable)
