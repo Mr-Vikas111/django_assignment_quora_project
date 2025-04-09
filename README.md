@@ -29,5 +29,10 @@ A simple Question & Answer web app built using **Django**, featuring user regist
 1. **Clone the repository**
    ```bash
    git clone git@github.com:Mr-Vikas111/django_assignment_quora_project.git
-   cd quora_posts 
+   cd quora_posts
+
+ ```bash
+python -m venv env
+source env/bin/activate  # on Windows: env\Scripts\activate
+
    
