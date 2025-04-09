@@ -58,14 +58,14 @@ A simple Question & Answer web app built using **Django**, featuring user regist
 ## 🧑‍💻 Models Used
 
 - QuestionData
-user: ForeignKey to User
-question: TextField
+ - user: ForeignKey to User
+ - question: TextField
 
 - QuestionAnswerData
-question: FK to QuestionData
-answer: Text
-commented_by: FK to User (nullable)
+ - question: FK to QuestionData
+ - answer: Text
+ - commented_by: FK to User (nullable)
 
 - QuestionLikesData
-question: FK to QuestionData
-liked_by: FK to User (nullable)
+ - question: FK to QuestionData
+ - liked_by: FK to User (nullable)
