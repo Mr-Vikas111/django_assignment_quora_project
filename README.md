@@ -62,7 +62,7 @@ A simple Question & Answer web app built using **Django**, featuring user regist
 ### 🔐 Register Page
 ![Login Page](images/register.png)
 
-### 🔐 Question Listing Page
+### 📝  Question Listing Page
 ![Login Page](images/list_questions.png)
 
 ### 📝 Create Question
